@@ -1,8 +1,6 @@
 'use strict'
 // Cargamos los modelos para usarlos posteriormente
 var User = require('../models/user');
-const atob = require('atob');
-const btoa = require('btoa');
 const crypto = require('crypto');
 const salt = require('../config/config');
 
@@ -109,7 +107,6 @@ module.exports = {
             res.status(200).send({
               "message": "Success"
             });
-            console.log('Removed');
           } else {
             console.log('ERROR: ' + err);
           }

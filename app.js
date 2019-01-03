@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var app = express();
 // Importamos las rutas
 var user_routes = require('./api/routes/user');
+var galileo_routes = require('./api/routes/galileo');
 //cargar middlewares
 //un metodo que se ejecuta antes que llegue a un controlador
 //Configuramos bodyParser para que convierta el body de nuestras peticiones a JSON
@@ -16,5 +17,6 @@ app.use(bodyParser.json());
 app.use(cors());
 // Cargamos las rutas
 app.use('/', user_routes);
+app.use('/', galileo_routes);
 // exportamos este módulo para poder usar la variable app fuera de este archivo
 module.exports = app;

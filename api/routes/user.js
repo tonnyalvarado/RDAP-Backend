@@ -16,7 +16,7 @@ api.get('/user/:id', md_auth.ensureAuth, (req, res) => {
 api.post('/user', md_auth.ensureAuth, (req, res) => {
   UserController.addUser(req, res);
 });
-api.post('/user/whithoutAuthentucation', (req, res) => {
+api.post('/user/whithoutAuthentication', (req, res) => {
   UserController.addUser(req, res);
 });
 api.put('/user/:id', md_auth.ensureAuth, (req, res) => {
