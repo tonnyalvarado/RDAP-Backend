@@ -19,6 +19,9 @@ api.post('/galileo', md_auth.ensureAuth, (req, res) => {
 api.put('/galileo/:id', md_auth.ensureAuth, (req, res) => {
   GalileoController.updateGalileo(req, res);
 });
+api.put('/galileo/data/:id', md_auth.ensureAuth, (req, res) => {
+  GalileoController.updateDataGalileo(req, res);
+});
 api.delete('/galileo/:id', md_auth.ensureAuth, (req, res) => {
   GalileoController.deleteGalileo(req, res);
 });

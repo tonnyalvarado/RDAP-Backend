@@ -54,8 +54,26 @@ module.exports = {
         });
       } else {
         galileo.nombre = req.body.nombre;
-        galileo.datos = req.body.datos;
         galileo.ubicacion = req.body.ubicacion;
+
+        galileo.save(function (err) {
+          if (err) {
+            console.log('ERROR: ' + err);
+          }
+          res.send(galileo);
+        });
+      }
+    });
+  },
+  updateDataGalileo() {
+    Galileo.findById(req.params.id, function (err, galileo) {
+      if (err || !galileo) {
+        res.status(404).send({
+          "status": 404,
+          "message": "El galileo no existe"
+        });
+      } else {
+        galileo.datos = req.body.datos;
 
         galileo.save(function (err) {
           if (err) {
